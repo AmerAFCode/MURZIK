@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&display=swap');
+
+html,
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    font-size: 100%;
+    /* box-sizing: border-box; */
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    cursor: default;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 5.5vw 1fr;
+    grid-template-rows: 7vh 1fr 15vh;
+
+    background-color: rgb(30, 30, 30);
+}
+
+.control-panel {
+    grid-column: 1/3;
+    grid-row: 1;
+
+    background-color: rgb(30, 30, 30);
+}
+
+.sidebar {
+    margin: 0.5vw;
+
+    grid-column: 1;
+    grid-row: 2;
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 50);
+}
+
+main {
+    margin: 0.5vw;
+
+    grid-column: 2;
+    grid-row: 2;
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(50, 50, 50);
+}
+
+.media-bar {
+    padding: 0.3vw;
+
+    grid-column: 1/3;
+    grid-row: 3;
+
+    border-top: 3px solid var(--accent, rgb(200, 70, 0));
+    /*gonna be a var*/
+    background-color: rgb(20, 20, 20);
+}
+
+#media {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 80px 20vw 1fr 20vw;
+    grid-template-rows: 1;
+}
+
+.img-container {
+    /* margin:1vw; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container a {
+    max-height: 72px;
+    max-width: 72px;
+
+    margin: 0 0.5vw 0 0.3vw;
+}
+
+
+.music-info-container {
+    width: 100%;
+    margin-left: 0.5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#song-title {
+    margin: 0 0 10px 0;
+
+    font-family: 'Lato', sans-serif;
+}
+
+.credit {
+    width: 100%;
+}
+
+#ArtistAlbum {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+
+    list-style-type: none;
+    color: rgb(100, 100, 100);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+}
+
+#ArtistAlbum p {
+    margin: 0;
+}
+
+.originLink {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+
+.songOrigin {
+    color: white !important;
+}
+
+.originLink:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.navigation {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem
+}
+
+.progress-container {
+    width: 100%;
+}
+
+.progress-bar-container {
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 6px;
+
+    position: relative;
+
+    background: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+
+    position: relative;
+
+    background-color: var(--accent, rgb(200, 70, 0));
+    border-radius: inherit;
+}
+
+.progress-thumb {
+    height: 14px;
+    width: 14px;
+
+    position: absolute;
+    bottom: -4px;
+    right: -10px;
+
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 0);
+}
+
+.progress-bar:hover>.progress>.progress-thumb {
+    background: rgba(255, 255, 255, 1);
+    transition: background 0.2s ease-in-out;
+}
+
+#progress-preview {
+    width: 0%;
+    height: 6px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    border-radius: 10px;
+    background-color: rgba(200, 200, 200, 0.5);
+    opacity: 0;
+}
+
+.progress-bar:hover>#progress-preview {
+    opacity: 1;
+}
+
+.timestamp {
+    margin: 0.5rem;
+    font-size: 0.7rem;
+    color: white;
+    font-family: "Lato", sans-serif;
+}
+
+.button-list-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button-list {
+    width: 100%;
+    margin: 0.2rem 0 0 0;
+
+    display: flex;
+    justify-content: center;
+    gap:1rem
+}
+
+.action-btn {
+    padding: 0;
+    margin: 0;
+
+    background: none;
+    border: none;
+    border-radius: 100%;
+
+    color: var(--buttoncolor, rgb(170, 60, 0));
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+.action-btn-big {
+    color: var(--accent, rgb(200, 70, 0));
+    font-size: 2rem;
+}
+
+.fa-solid:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+    color: var(--accent, rgb(200, 70, 0));
+}
+
+#play {
+    display: block;
+}
+
+#play:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+.fa-solid:active {
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out;
+    color: var(--buttoncolor, rgb(170, 60, 0));
+}
+
+#play:active {
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out
+}
+
+#pause {
+    display: none;
+}
+
+#pause:hover {
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
+}
+
+#pause:active {
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out
+}
+
+.audio-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#volumeOFF {
+    display: none;
+}
+
+#loopOn {
+    display: none;
+}
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+/* ============================================================= MAIN PAGE ============================================================= */
+
+.main-page-container {
+    overflow-y: scroll;
+    scrollbar-color: rgb(100, 100, 100) transparent;
+}
+
+.main-page {
+    padding: 1vw 1vw 0 1vw;
+}
+
+.album-list-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    margin: 0 0 1rem 0;
+
+    font-size: clamp(1rem, 1.5rem, 1.5rem);
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+.album-list-grid {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 2vw 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.section-items-albums {
+    width: 100%;
+    height: 5rem;
+    margin: 0;
+
+    display: flex;
+
+
+    background: rgba(100, 100, 100, 0.2);
+    border-radius: 5px;
+}
+
+.album-cover {
+    border-radius: 5px 0 0 5px;
+}
+
+.album-title-container {
+    width: 100%;
+    padding: 0 0 0 1rem;
+    align-content: center;
+}
+
+.album-title {
+    font-size: 1rem;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* ======================SONGSSS=========================== */
+.song-list-grid {
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap:10px;
+    list-style-type: none;
+}
+
+.section-items-songs {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.playSongBTN {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    background: none;
+    border: none;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.song-choice {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 5px;
+}
+
+.song-choice-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.1), rgba(10, 10, 10, 0.8));
+    border-radius: 0 0 5px 5px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    align-content: center;
+    display: block;
+}
+
+.song-choice-name-p {
+    padding:0 0 0 5px; 
+    margin:0;
+    align-content: center;
+}
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+/* ============================================================= FOOTER ============================================================= */
+footer {
+    background-color: rgb(20, 20, 20);
+    margin-top: 5vw;
+}
+
+footer>div {
+    text-align: center;
+    align-content: center;
+    font-family: 'Lato', sans-serif;
+    color: rgb(50, 50, 50)
+}
+
+footer>div>p {
+    margin: 0;
+}
+
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+/* ============================================================= SIDEBAR ============================================================= */
+#library {
+    width: 100%;
+    height: 100%;
+
+}
+
+#artist-list {
+    list-style-type: none;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#artist-list li {
+    position: relative;
+    width: 90%;
+    height: 4rem;
+}
+
+.artist-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.artist-container:hover {
+    background-color: rgb(30, 30, 30);
+
+}
+
+.artist-img {
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    background-color: #fff;
+    border: none;
+}
+
+.img-artist {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: none;
+}
+
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+/* ============================================================= TOP BAR ============================================================= */
+#home {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: 20% 1fr;
+}
+
+.top-bar {
+    width:100%;
+    height: 100%;
+
+    grid-column: 1;
+}
+
+.HomeButton {
+    height: 100%;
+    width: fit-content;
+
+    display: flex;
+}
+
+.logo {
+    height: 100%;
+    margin-left: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--accent, rgb(200, 70, 0));
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 2rem;
+    cursor:pointer;
+}
+
+.app-name {
+    margin: 0;
+    cursor:inherit
+}
+
+.searchbar-container {
+    width: 100%;
+    grid-column: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    bottom:0.5px;
+}
+
+#searchbar {
+    width:40%;
+    height:40px;
+
+    background:none;
+    border: solid 2px rgba(100, 100, 100, 0.2);
+    border-radius: 100px;
+    color:var(--accent, rgb(200,70,0))
+
+}
+
+.search-btn {
+    padding: 10px 12px;
+    margin: 0;
+    background:none;
+    border:solid 2px rgb(100,100,100,0.2);
+    border-radius: 100%;
+}
+
+.fa-magnifying-glass {
+    width:100%;
+    height:100%;
+    padding: 0;
+    margin: 0;
+    color: var(--accent, rgb(200,70,0))
+}
+
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+/* ===================================================== RESPONSIVENESS ===================================================== */
+@media (max-width: 1350px ) {
+    .screen {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10% 1fr 15%;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .main-page-container {
+        grid-column: 1;
+    }
+    .song-list-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .album-list-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
+
+    .song-list-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:750px) {
+    #media {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .music-info-container {
+        display: none; 
+    }
+
+    .audio-control {
+        margin: 1rem;
+    }
+}
+
+@media (max-width:550px) {
+    #home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-bar {
+        width:100%;
+        height: 100%;
+    
+        display: flex;
+        justify-content: center;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .searchbar-container {
+        display: none; 
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .song-list-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 320px) {
+    .section-title {
+        font-size: 0.9rem;
+    }
+
+    .album-title {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .album-list-flex {
+        display: none;
+    }
+}

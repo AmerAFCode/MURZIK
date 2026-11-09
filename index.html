@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="style.css">
+    <title>Murzik</title>
+</head>
+
+<body>
+    <audio id="audio" src="music/KaliUchis/RedMooninVenus/I Wish you Roses.mp3"></audio>
+    <!--the hardcoded song here is on purpose as an easter egg and bc i love this song-->
+    <div class="screen">
+        <div class="control-panel">
+            <nav id="home">
+                <div class="top-bar">
+                    <div class="HomeButton">
+                        <a href="index.html" class="logo">
+                            <i class="fa-solid fa-record-vinyl"></i>
+                            <p class="app-name">MURZIK</p>
+                        </a> <!--Logo-->
+                    </div>
+                </div>
+                <!--Search Bar-->
+                <div class="searchbar-container">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="search" placeholder="  Nothing to search" name="" id="searchbar">
+                </div>
+            </nav>
+        </div>
+
+        <div class="sidebar">
+            <nav id="library"> <!--Sidebar that contains all the artists and playlists-->
+                <ul id="artist-list">
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/Metro Boomin.jpg"
+                                        alt=""></div>
+                            </div>
+                        </a></li> <!--Artist 1-->
+
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/Kali Uchis.jpg"
+                                        alt=""></div>
+                            </div>
+                        </a></li> <!--Artist 2-->
+
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/Don Toliver.jpg"
+                                        alt=""></div>
+                            </div>
+                        </a></li> <!--Artist 3-->
+
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/Kendrick Lamar.jpg"
+                                        alt=""></div>
+                            </div>
+                        </a></li> <!--Artist 4-->
+
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/Samara Cyn.jpg"
+                                        alt=""></div>
+                            </div>
+                        </a></li> <!--Artist 5-->
+
+                    <li><a href="#">
+                            <div class="artist-container">
+                                <div class="artist-img"><img class="img-artist" src="images/Artists/J. Cole.jpg" alt="">
+                                </div>
+                            </div>
+                        </a></li> <!--Artist 6-->
+                </ul>
+            </nav>
+        </div>
+
+        <main class="main-page-container"> <!--Main Page-->
+            <div class="main-page">
+                <div class="album-list-flex">
+                    <div class="section-header">
+                        <h4 class="section-title">Albums for you (Displayed Recommendations)</h4>
+                    </div>
+                    <div class="section-container">
+                        <ul class="album-list-grid">
+                            <li class="section-items-albums">
+                                <img class="album-cover" src="images/albumCovers/DonToliver/LifeOfADon.jpg"
+                                    style="height:inherit;">
+                                <div class="album-title-container">
+                                    <h5 class="album-title">Life of a DON</h5>
+                                </div>
+                            </li>
+                            <li class="section-items-albums">
+                                <img class="album-cover" src="images/albumCovers/KendrickLamar/DAMN..jpg"
+                                    style="height:inherit;">
+                                <div class="album-title-container">
+                                    <h5 class="album-title">DAMN.</h5>
+                                </div>
+                            </li>
+                            <li class="section-items-albums">
+                                <img class="album-cover" src="images/albumCovers/DonToliver/Octane.jpg"
+                                    style="height:inherit;">
+                                <div class="album-title-container">
+                                    <h5 class="album-title">OCTANE</h5>
+                                </div>
+                            </li>
+                            <li class="section-items-albums">
+                                <img class="album-cover" src="images/albumCovers/SamaraCyn/Detour.jpg"
+                                    style="height:inherit;">
+                                <div class="album-title-container">
+                                    <h5 class="album-title">Detour</h5>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="song-div-grid">
+                    <div class="section-header">
+                        <h4 class="section-title">Songs to play (Playable)</h4>
+                    </div>
+                    <div class="section-container">
+                        <ul class="song-list-grid">
+                            <!--FOR: YOU-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songurl="music/KaliUchis/Sincerely/For: You.mp3"
+                                    data-color="#c4a7af" data-buttoncolor="#b5919b" data-artist="Kali Uchis"
+                                    data-album="Sincerely,">
+                                    <img class="song-choice" src="images/albumCovers/KaliUchis/Sincerely.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">For: You</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--TOO MANY NIGHTS-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN"
+                                    data-songURL="music/MetroBoomin/HeroesAndVillains/Too Many Nights.mp3"
+                                    data-color="#ecebeb" data-buttoncolor="#cbc8c8" data-artist="Metro Boomin"
+                                    data-album="HEROES & VILLAINS">
+                                    <img class="song-choice" src="images/albumCovers/MetroBoomin/HeroesAndVillains.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Too Many Nights</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--I N T E R L U D E-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN"
+                                    data-songURL="music/J.Cole/TheOffSeason/i n t e r l u d e.mp3" data-color="#6681a4"
+                                    data-buttoncolor="#546d8e" data-artist="J. Cole" data-album="The Off-Season">
+                                    <img class="song-choice" src="images/albumCovers/J.Cole/TheOffSeason.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">i n t e r l u d e</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--COMPANY PT 2-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/DonToliver/LifeOfADon/Company Pt 2.mp3"
+                                    data-color="#a43023" data-buttoncolor="#902a1f" data-artist="Don Toliver"
+                                    data-album="Life of a DON">
+                                    <img class="song-choice" src="images/albumCovers/DonToliver/LifeOfADon.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Company Pt 2</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--BOREDOM-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Tyler,theCreator/FlowerBoy/Boredom.mp3"
+                                    data-color="#e28e2e" data-buttoncolor="#d6801e" data-artist="Tyler, the Creator"
+                                    data-album="Flower Boy">
+                                    <img class="song-choice" src="images/albumCovers/Tyler,theCreator/FlowerBoy.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Boredom</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--kifak inta-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Twin's Song Picks/Kifak Inta.mp3"
+                                    data-color="#f0ca42" data-buttoncolor="#e6b812" data-artist="Fairuz"
+                                    data-album="Fairuz - Modern Favorites">
+                                    <img class="song-choice" src="images/albumCovers/Twin's Song Picks/Kifak Inta.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Kifak Inta</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--baadak ala baly-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Twin's Song Picks/Baadak Ala Baly.mp3"
+                                    data-color="#472b2a" data-buttoncolor="#362120" data-artist="Fairuz"
+                                    data-album="Konna Netlaka">
+                                    <img class="song-choice"
+                                        src="images/albumCovers/Twin's Song Picks/Baadak Ala Baly.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Baadak Ala Baly</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--Ahwak-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Twin's Song Picks/Ahwak.mp3"
+                                    data-color="#a54c32" data-buttoncolor="#94442d" data-artist="Abdel Halim Hafez"
+                                    data-album="Rawaeaa Abd El Halim 5">
+                                    <img class="song-choice" src="images/albumCovers/Twin's Song Picks/Ahwak.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Ahwak</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--Min Aya Malak-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Twin's Song Picks/Min Aya Malak.mp3"
+                                    data-color="#d3c8c0" data-buttoncolor="#c4b5ab" data-artist="Azar Habib"
+                                    data-album="Saydali">
+                                    <img class="song-choice"
+                                        src="images/albumCovers/Twin's Song Picks/Min Aya Malak.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Min Aya Malak</p>
+                                    </div>
+                                </button>
+                            </li>
+                            <!--Nefsy Ahbek-->
+                            <li class="section-items-songs">
+                                <button class="playSongBTN" data-songURL="music/Twin's Song Picks/Nefsy Ahbek.mp3"
+                                    data-color="#5b81a9" data-buttoncolor="#4c6e92" data-artist="Cairokee"
+                                    data-album="Roma">
+                                    <img class="song-choice" src="images/albumCovers/Twin's Song Picks/Nefsy Ahbek.jpg"
+                                        style="display: block;">
+                                    <div class="song-choice-name">
+                                        <p class="song-choice-name-p">Nefsy Ahbek</p>
+                                    </div>
+                                </button>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div>
+                    <p>&copy;Murzik @2026 - Amer Al Fatayri</p>
+                    <p>also thx to twin who contributed in song choice</p>
+                </div>
+            </footer>
+        </main>
+        <div class="media-bar" id="media-bar">
+            <nav id="media">
+                <div class="img-container"><a href="#"><img id="album-image" src="images/PlaceHolder.png" alt=""
+                            style="max-width: 72px; max-height:72px; border-radius: 10px;"></a></div> <!--Cover Art-->
+
+                <div class="music-info-container">
+                    <h4 id="song-title"><a href="#" class="originLink songOrigin" id="song-title-link">Song</a></h4>
+                    <!--Song name-->
+                    <div class="credit"> <!--to align credits-->
+                        <ul id="ArtistAlbum"> <!--to hold the info as well as allow for more alignment-->
+                            <li id="Artist"><a href='#' class='originLink' id="Artist-link">Artist</a></li>
+                            <!--Artist Name-->
+                            <li id="separator">
+                                <p>&ThinSpace;&bull;&ThinSpace;</p>
+                            </li>
+                            <li id="Album"><a href="#" class="originLink" id="Album-link">Album</a></li>
+                            <!--Album Name-->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <div class="button-list-container">
+                        <div class="button-list">
+                            <button class="action-btn"><i id="shuffle" class="fa-solid fa-shuffle"></i></button>
+                            <!--Shuffle-->
+                            <button class="action-btn"><i id="prev" class="fa-solid fa-backward-step"></i></button>
+                            <!--Skip Previous-->
+                            <button class="action-btn action-btn-big">
+                                <i id="play" class="fa-solid fa-circle-play"></i>
+                                <i id="pause" class="fa-solid fa-circle-pause"></i>
+                            </button> <!--Play/Pause-->
+                            <button class="action-btn"><i id="next" class="fa-solid fa-forward-step"></i></button>
+                            <!--Skip Next-->
+                            <button id="repeat" class="action-btn">
+                                <i id="loopOff" class="fa-solid fa-repeat"></i>
+                                <i id="loopOn" class="fa-solid fa-infinity"></i>
+                            </button>
+                            <!--Repeat-->
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar-container"> <!--to contain the time stamps too-->
+                            <span class="timestamp" id="progress-time">0:00</span>
+                            <div class="progress-bar" id="progress-bar">
+                                <!--to be able to change the position and flex of the bar-->
+                                <div id="progress-preview"></div>
+                                <div class="progress" id="progress">
+                                    <div class="progress-thumb"></div>
+                                </div> <!--progress bar-->
+                            </div><span class="timestamp" id="song-duration">0:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-control">
+                    <button id="mute" class="action-btn">
+                        <i id="volumeON" class="fa-solid fa-volume"></i>
+                        <i id="volumeOFF" class="fa-solid fa-volume-xmark"></i>
+                    </button> <!--volume icon and button to mute and unmute instantly-->
+                    <div class="audio-control-bar"> <!--to be able to change the position and flex of the bar-->
+                        <!-- <div class="audio-controller"><input type="range" name="" id="volume-"></div> audio control -->
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script src="musiclist.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
