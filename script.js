@@ -41,6 +41,12 @@ duration.textContent = "0:00"
 //     // currentAlbumIndex = murzik
 // }
 
+window.addEventListener("load", removePreloader)
+
+function removePreloader() {
+    document.getElementById("preloader").style.display="none"
+}
+
 let imgAlbum = document.getElementById("album-image");
 let songName = document.getElementById("song-title-link");
 let artistName = document.getElementById("Artist-link");

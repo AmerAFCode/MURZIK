@@ -26,6 +26,14 @@ h6 {
     border-radius: 100px;
 }
 
+#preloader {
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255) url(https://i.giphy.com/kPSh2dOI8IGgalB4tJ.webp) no-repeat fixed center;
+    position: fixed;
+    z-index: 9999;
+}
+
 .screen {
     width: 100%;
     height: 100%;
