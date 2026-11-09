@@ -172,8 +172,14 @@ progressBar.addEventListener("mousemove", (event) => {
     progressPreview.style.width = previewPercent + "%"
 })
 
-progressBar.addEventListener("click", () => {
-    alert("replay: press play to hear it again")
+progressBar.addEventListener("click", (event) => {
+    if (!audioPlayer.duration) return
+
+    const rect = progressBar.getBoundingClientRect()
+    const distance = event.clientX - rect.left
+    const fraction = distance / rect.width
+    const skipToTimestamp = fraction * audioPlayer.duration
+    audioPlayer.currentTime = skipToTimestamp
 })
 
 audioPlayer.addEventListener("ended", endedSong)
